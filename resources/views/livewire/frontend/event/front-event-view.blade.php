@@ -35,7 +35,9 @@ background-size: cover; background-position:100% 30%;
 
 
                 <div class="car p-2 text-whit" >
-                    <p><strong>Posted at</strong>: {{ $event->created_at->format('j F, Y, h : iA' ) }}</p>
+                    {{-- <p><strong>Posted at</strong>: {{ $event->created_at->format('j F, Y, h : iA' ) }}</p> --}}
+
+                    <p><strong>Posted</strong>: {{ $event->created_at->diffForHumans() }}</p>
                     <h5 class="card-title text-whit" style="text-align: justify">{{ $event->title }}</h5>
                     <img src="{{ Storage::url($event->image) }}" class="card-im img-responsive h-5" style="width: 100%; height:500px; object-fit:cover; object-position:50% 20%;" alt="...">
 

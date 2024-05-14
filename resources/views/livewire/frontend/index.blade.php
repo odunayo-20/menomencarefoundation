@@ -213,7 +213,7 @@
                                 <div class="card-body">
                                     <h5 class="mb-3" style="font-size: 15px">{!! Str::limit($value->title, 100,
                                         '...') !!}</h4>
-                                        
+
                                 </div>
                                 <div class="card-link">
                                     <a class="text-primary fw-medium" href="events/view/{{ $value->id }}">Read

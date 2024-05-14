@@ -88,7 +88,8 @@ background-size: cover; background-position:100% 30%;
                                     <div class="col-md-6">
                                         <p class="mb-2" style="font-size:12px;"> <a class="text-primary fw-medium"
                                             href="events/view/{{ $value->id }}">{{ Str::limit($value->title, 100, '...') }}</a> </p>
-                                        <p class="mb-2" style="font-size:12px;"> {{ $value->date }}</p>
+                                        {{-- <p class="mb-2" style="font-size:12px;"> {{ $value->date }}</p> --}}
+                                        <p class="mb-2" style="font-size:12px;">Posted: {{ $value->created_at->diffForHumans() }}</p>
                                     </div>
                                 </div>
 

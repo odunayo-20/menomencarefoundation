@@ -38,7 +38,7 @@
                         <a href="{{route('event_front')}}" class="nav-item nav-link text-white">Events</a>
                         <a href="{{route('memberships')}}" class="nav-item nav-link text-white">Membership</a>
                         <a href="{{route('volunteers')}}" class="nav-item nav-link text-white">Volunteers</a>
-                        
+
                         <a href="{{route('gallery')}}" class="nav-item nav-link text-white">Gallery</a>
                         <a href="{{route('testimonial')}}" class="nav-item nav-link text-white">Testimonial</a>
                         <a href="{{ route('donate') }}" class="nav-item nav-link text-white d-lg-none">Donate</a>
