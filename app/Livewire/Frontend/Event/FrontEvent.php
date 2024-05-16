@@ -32,7 +32,7 @@ class FrontEvent extends Component
 
     public function loadEvents()
     {
-        $this->past = Event::latest()->where('date', '<', now())->where('status', 'Active')->limit(5)->get();
+        $this->past = Event::latest()->where('date', '<', now())->where('status', 'Active')->limit(6)->get();
         // $this->latests = Event::latest()->where('date', '>=', now())->where('status', 'Active')->limit(5)->get();
 
     }

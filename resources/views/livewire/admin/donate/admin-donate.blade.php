@@ -44,7 +44,6 @@
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Amount</th>
-                                        <th scope="col">Status</th>
                                         <th scope="col">Created</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -56,10 +55,9 @@
                                     <tr>
 
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $value->payer_name }}</td>
-                                        <td>{{ $value->payer_email }}</td>
-                                        <td>${{ $value->amount }}</td>
-                                        <td>{{ $value->payment_status }}</td>
+                                        <td>{{ $value->fullname }}</td>
+                                        <td>{{ $value->email }}</td>
+                                        <td>N{{number_format($value->amount), 2  }}</td>
                                         <td>{{ $value->created_at->format('d-M-Y, h:iA') }}</td>
                                         <td>
 

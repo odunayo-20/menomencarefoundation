@@ -1,0 +1,24 @@
+Hostname  -> dpg-ckv7coa37rbc73f563s0-a
+Port
+
+5432
+
+Database
+
+laravel_test1
+
+Password
+
+M0UJbE2KewB5YHYt1cc77BykMAaM4FyC
+
+Internal Database URL
+
+postgres://laravel_test1_user:M0UJbE2KewB5YHYt1cc77BykMAaM4FyC@dpg-ckv7coa37rbc73f563s0-a/laravel_test1
+
+External Database URL
+
+postgres://laravel_test1_user:M0UJbE2KewB5YHYt1cc77BykMAaM4FyC@dpg-ckv7coa37rbc73f563s0-a.oregon-postgres.render.com/laravel_test1
+
+PSQL Command
+
+PGPASSWORD=M0UJbE2KewB5YHYt1cc77BykMAaM4FyC psql -h dpg-ckv7coa37rbc73f563s0-a.oregon-postgres.render.com -U laravel_test1_user laravel_test1

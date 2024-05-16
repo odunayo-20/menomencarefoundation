@@ -22,7 +22,7 @@ background-size: cover; background-position:100% 20%;
     <!-- Page Header End -->
 
 
-    
+
      <!-- Service Start -->
      <div class="container-fluid container-service py-5">
         <div class="container py-5">
@@ -35,9 +35,9 @@ background-size: cover; background-position:100% 20%;
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-heart-pulse text-dark"></i>
                         </div>
-                        <h5  class="mb-3">Medical Expert</h4>
-                            <p class="mb-4">This is an avenue where our team of Medical expect move to rural settle to administer treatment to the no help.</p>
-                        
+                         <h5 class="mb-3">Medical Mission</h5>
+                            <p class="mb-4">This is an avenue where our team of Medical expect move to rural settlement to help in provision of Free Basic Medical Care</p>
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -45,10 +45,10 @@ background-size: cover; background-position:100% 20%;
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-lungs text-dark"></i>
                         </div>
-                        <h5  class="mb-3">First Aid Empowerment</h4>
+                        <h5  class="mb-3">First Aid Empowerment</h5>
                             <p class="mb-4">First Aid certification empowers individuals to respond confidently in emergencies by providing immediate response and initial care, teaching basic life-saving techniques in a rural environment.
                             </p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -56,10 +56,10 @@ background-size: cover; background-position:100% 20%;
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-virus text-dark"></i>
                         </div>
-                        <h5  class="mb-3">Health and Disease Awareness education</h4>
+                        <h5  class="mb-3">Health and Disease Awareness education</h5>
                             <p class="mb-4"> This help to create awareness on diseases outbreak and government intervention to circumvent the spread.
                             </p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
@@ -67,11 +67,11 @@ background-size: cover; background-position:100% 20%;
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-capsule-pill text-dark"></i>
                         </div>
-                        <h5  class="mb-3">Human Capital Development</h4>
+                        <h5  class="mb-3">Human Capital Development</h5>
                             <p class="mb-4">Being unhealthy depressed give us inability to be counter productive, need for us to train or educate our rural audience on how to live and eat healthy food, also to take their personal hygiene seriously.
 
                             </p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -79,9 +79,9 @@ background-size: cover; background-position:100% 20%;
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-capsule text-dark"></i>
                         </div>
-                        <h5  class="mb-3">Referral and Support Program</h4>
+                        <h5  class="mb-3">Referral and Support Program</h5>
                             <p class="mb-4">This is mainly for perceive serious illness discover during the medical mission that requires further examination and treatment. We refer the person in question to a government hospital and support the process.</p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -89,10 +89,10 @@ background-size: cover; background-position:100% 20%;
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-prescription2 text-dark"></i>
                         </div>
-                        <h5  class="mb-3">Follow Up care</h4>
+                        <h5  class="mb-3">Follow Up care</h5>
                             <p class="mb-4">This is done after the treatment, which requires us to pay the patient visit to determine her healing progress.
                             </p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -100,10 +100,10 @@ background-size: cover; background-position:100% 20%;
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-file-medical text-dark"></i>
                         </div>
-                        <h5  class="mb-3">Counselling</h4>
+                        <h5  class="mb-3">Counselling</h5>
                             <p class="mb-4">There are lot of people who really don't understand their treatments and conditions, this individualized process involves guidance and collaborative problem solving to help the patients.
                             </p>
-                        
+
                     </div>
                 </div>
 
@@ -112,16 +112,16 @@ background-size: cover; background-position:100% 20%;
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-clipboard2-pulse text-dark"></i>
                         </div>
-                        <h5  class="mb-3 text-lg">Medical Emergency Response</h4>
+                        <h5  class="mb-3 text-lg">Medical Emergency Response</h5>
                             <p class="mb-4">The Medical emergencies often present life-threatening situations that require immediate action like, quick Vehicler transportation to the nearest hospital, first Aid administration.</p>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Service End -->
-    
+
 
 
 

@@ -30,6 +30,7 @@ class Index extends Component
 
     #[Rule('required|string|min:10')]
     public $message;
+    public $past = [];
 
     public function render()
     {
@@ -43,6 +44,7 @@ class Index extends Component
         $this->teams = Team::latest()->where('status', 'Active')->get();
         $this->testimonial = Testimonial::latest()->where('status', 'Active')->where('video',null)->get();
         $this->report = Report::latest()->limit(3)->where('status', 'Active')->get();
+        $this->past = Event::latest()->where('date', '<', now())->where('status', 'Active')->limit(6)->get();
 
     }
 
@@ -64,6 +66,6 @@ public function downloadFile(Report $report){
          return redirect(route('index'));
       }
 
-      
+
 
 }

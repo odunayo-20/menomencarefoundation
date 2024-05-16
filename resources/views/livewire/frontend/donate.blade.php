@@ -50,12 +50,11 @@ background-size: cover; background-position:100% 20%;
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                             @endif
-                            <div class="col-md-4 mb-3" style="float:right">
+                            <div class="col-lg-4 mb-3" style="float:right">
                                 <div class="form-floating">
-                                    {{-- <input type="text" wire:model='payment_name' >
-                                    <input type="text" wire:model='quantity' > --}}
+                                   
                                     <input wire:model='amount' type="number" class="form-control" id="name" placeholder="Enter Amount in Dollars">
-                                    <label for="name">Enter Amount in Dollars</label>
+                                    <label for="name">Enter Amount in Naira</label>
                                     @error('amount')
                                         <span class='text-danger'>{{$message}}</span>
                                     @enderror
@@ -66,9 +65,9 @@ background-size: cover; background-position:100% 20%;
                         <div class="row g-3 p-2 ">
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating">
-                                    <input wire:model='name' type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input wire:model='fullname' type="text" class="form-control" id="name" placeholder="Your Name">
                                     <label for="name">Your Name</label>
-                                    @error('name')
+                                    @error('fullname')
                                     <span class='text-danger'>{{$message}}</span>
                                 @enderror
 
@@ -104,16 +103,8 @@ background-size: cover; background-position:100% 20%;
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="d-block mb-3 btn-group" role="group" aria-label="Basic radio toggle button group">
-                                    <input type="radio" class="btn-check" wire:model="btnpayment" id="btnradio1" autocomplete="off" value='stripe' name="btnradio">
-                                    <label class="btn btn-outline-primary" for="btnradio1">Stripe</label>
-
-                                    <input type="radio" wire:model="btnpayment" class="btn-check" id="btnradio2" autocomplete="off" value='paypal' name="btnradio">
-                                    <label class="btn btn-outline-primary" for="btnradio2">Paypal</label>
-                                    @error('btnpayment')
-                                @enderror
-                                </div>
-                                <button wire:click='store' class="btn btn-primary rounded-pill py-3 px-5" type="submit">Donate Now</button>
+                               
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Donate Now</button>
                             </div>
                         </div>
                     </form>

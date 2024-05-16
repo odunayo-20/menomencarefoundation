@@ -129,9 +129,8 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-heart-pulse text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Medical Expert</h4>
-                            <p class="mb-4">This is an avenue where our team of Medical expect move to rural settle to
-                                administer treatment to the no help.</p>
+                        <h5 class="mb-3">Medical Mission</h5>
+                            <p class="mb-4">This is an avenue where our team of Medical expect move to rural settlement to help in provision of Free Basic Medical Care</p>
 
                     </div>
                 </div>
@@ -140,7 +139,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-lungs text-dark"></i>
                         </div>
-                        <h5 class="mb-3">First Aid Empowerment</h4>
+                        <h5 class="mb-3">First Aid Empowerment</h5>
                             <p class="mb-4">First Aid certification empowers individuals to respond confidently in
                                 emergencies by providing immediate response and initial care, teaching basic life-saving
                                 techniques in a rural environment.
@@ -153,7 +152,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-virus text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Health and Disease Awareness education</h4>
+                        <h5 class="mb-3">Health and Disease Awareness education</h5>
                             <p class="mb-4"> This help to create awareness on diseases outbreak and government
                                 intervention to circumvent the spread.
                             </p>
@@ -165,7 +164,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-capsule-pill text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Human Capital Development</h4>
+                        <h5 class="mb-3">Human Capital Development</h5>
                             <p class="mb-4">Being unhealthy depressed give us inability to be counter productive, need
                                 for us to train or educate our rural audience on how to live and eat healthy food, also
                                 to take their personal hygiene seriously.
@@ -195,13 +194,37 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-12">
+                @if($lastestEvents->isNotEmpty())
                     <h4 class="my-2">Latest Events</h4>
+                    @else
+                    <h4 class="my-2">Past Events</h4>
+                    @endif
                 </div>
                 <div class="col-md-12">
                     <div class="row">
 
                         @if($lastestEvents->isEmpty())
-                        <p>No Records</p>
+                        @foreach ($past as $value)
+                        <div class="col-md-4 mb-3 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="car service-item position-relative ">
+                                <a href="events/view/{{ $value->id }}">
+                                    <img src="{{ Storage::url($value->image) }}" class="card-img-top"
+                                        style="height:300px; object-fit:cover; object-position: 100% 0%" alt="...">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="mb-3" style="font-size: 15px">{!! Str::limit($value->title, 100,
+                                        '...') !!}</h5>
+
+                                </div>
+                                <div class="card-link">
+                                    <a class="text-primary fw-medium" href="events/view/{{ $value->id }}">Read
+                                        More<i class="bi bi-chevron-double-right ms-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        @endforeach
+
                         @else
                         @foreach ($lastestEvents as $value)
                         <div class="col-md-4 mb-3 wow fadeInUp" data-wow-delay="0.5s">
@@ -254,7 +277,7 @@
 
 
     <!-- Report Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-2">
         <div class="container">
 
             <div class="text-center mx-auto wow fadeInUp py-4 my-4" data-wow-delay="0.1s" style="max-width: 500px;">
