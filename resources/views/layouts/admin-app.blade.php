@@ -48,7 +48,7 @@
 <livewire:admin.includes.sidebar>
 
         {{ $slot }}
-
+{{-- @yield('content') --}}
 
 
         <!-- Content Start -->

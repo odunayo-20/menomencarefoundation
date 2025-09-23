@@ -29,6 +29,12 @@
                     data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <style>
+                    .navbar-nav a{
+                        font-size: 14px !important;
+                    }
+                </style>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
                         <a href="{{ route('index') }}" class="nav-item nav-link active text-white">Home</a>
@@ -41,6 +47,7 @@
 
                         <a href="{{route('gallery')}}" class="nav-item nav-link text-white">Gallery</a>
                         <a href="{{route('testimonial')}}" class="nav-item nav-link text-white">Testimonial</a>
+                        <a href="{{route('bible_quote')}}" class="nav-item nav-link text-white">Bible Quote</a>
                         <a href="{{ route('donate') }}" class="nav-item nav-link text-white d-lg-none">Donate</a>
 
                         </div>

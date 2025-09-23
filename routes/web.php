@@ -85,6 +85,8 @@ Route::middleware('guest')->prefix('/')->group(function () {
     Route::get('report', FrontReports::class)->name('report');
     Route::get('volunteers', FrontVolunteer::class)->name('volunteers');
     Route::get('memberships', FrontMemberships::class)->name('memberships');
+    Route::get('bible-quote', \App\Livewire\Frontend\BibleQuote\Index::class)->name('bible_quote');
+    Route::get('bible-quote/{quote}', \App\Livewire\Frontend\BibleQuote\View::class)->name('bible-quote.single');
 });
 
 Route::middleware('guest')->group(function () {
@@ -127,5 +129,10 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/team', AdminTeam::class)->name('admin_team');
     Route::get('/team/create', AdminTeamCreate::class)->name('admin_team_create');
     Route::get('/team/edit/{team}', AdminTeamEdit::class)->name('admin_team_edit');
+
+
+    Route::get('/bible-quote', \App\Livewire\Admin\BibleQuote\Index::class)->name('admin_bible_quote');
+    Route::get('/bible-quote/create', \App\Livewire\Admin\BibleQuote\Create::class)->name('admin_bible_quote_create');
+    Route::get('/bible-quote/edit/{quote}', \App\Livewire\Admin\BibleQuote\Edit::class)->name('admin_bible_quote_edit');
 
 });

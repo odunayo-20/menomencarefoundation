@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Frontend;
 
+use App\Models\BibleQuote;
 use App\Models\Contact;
 use App\Models\Event;
 use App\Models\Report;
@@ -31,6 +32,7 @@ class Index extends Component
     #[Rule('required|string|min:10')]
     public $message;
     public $past = [];
+    public $quotes = [];
 
     public function render()
     {
@@ -45,6 +47,10 @@ class Index extends Component
         $this->testimonial = Testimonial::latest()->where('status', 'Active')->where('video',null)->get();
         $this->report = Report::latest()->limit(3)->where('status', 'Active')->get();
         $this->past = Event::latest()->where('date', '<', now())->where('status', 'Active')->limit(6)->get();
+        // $this->quotes = BibleQuote::
+            $this->quotes = BibleQuote::where('is_active', true)
+            ->orderBy('created_at', 'desc')
+            ->limit(3)->get();
 
     }
 
