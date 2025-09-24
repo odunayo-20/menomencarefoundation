@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('chapter');
             $table->string('verse');
             $table->text('explanation')->nullable();
-            $table->string('image')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

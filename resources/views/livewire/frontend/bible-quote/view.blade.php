@@ -93,7 +93,7 @@
         <div class="container">
             <!-- Back Button -->
             <div class="mb-4 back-button">
-                <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2">
+                <a href="{{ route("bible_quote") }}" class="btn btn-outline-primary rounded-pill px-4 py-2">
                     <i class="fa fa-arrow-left me-2"></i>Back to Bible Quotes
                 </a>
             </div>
@@ -233,7 +233,7 @@
     </div>
     <!-- Bible Quote Details End -->
 
-    
+
     <script>
         // Quote data - in your Laravel app, this would come from the server
 
