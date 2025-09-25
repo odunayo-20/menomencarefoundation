@@ -31,6 +31,7 @@
             <a href="{{ route('admin_membership') }}" class="nav-item nav-link @if(Request::segment(2) == 'membership') active @endif"><i class="fa fa-chart-line me-2"></i>Memberships</a>
             <a href="{{ route('admin_volunteer') }}" class="nav-item nav-link @if(Request::segment(2) == 'volunteer') active @endif"><i class="fa fa-table me-2"></i>Volunteers</a>
             <a href="{{ route('admin_bible_quote') }}" class="nav-item nav-link @if(Request::segment(2) == 'bible-quote') active @endif"><i class="fa fa-table me-2"></i>Bible Quote</a>
+            <a href="{{ route('admin_medical_advice') }}" class="nav-item nav-link @if(Request::segment(2) == 'medical-advice') active @endif"><i class="fa fa-table me-2"></i>Medical Advice</a>
 
         </div>
     </nav>

@@ -38,11 +38,7 @@ public function render()
             ->orderBy($this->sortBy, $this->sortDir)
             ->paginate($this->perPage);
 
-            // if(! $this->search){
-            //     $quotes = BibleQuote::latest()->paginate($this->perPage);
-            // }else{
-            //     $quotes = BibleQuote::latest()->where('title', 'like', '%'.$this->search.'%')->orwhere('book', 'like', '%'.$this->search.'%')->orwhere('quote', 'like', '%'.$this->search.'%')->paginate($this->perPage);
-            // }
+            
 
 
 

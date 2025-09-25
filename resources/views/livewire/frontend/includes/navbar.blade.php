@@ -48,6 +48,7 @@
                         <a href="{{route('gallery')}}" class="nav-item nav-link text-white">Gallery</a>
                         <a href="{{route('testimonial')}}" class="nav-item nav-link text-white">Testimonial</a>
                         <a href="{{route('bible_quote')}}" class="nav-item nav-link text-white">Bible Quote</a>
+                        <a href="{{route('medical_advice')}}" class="nav-item nav-link text-white">Medical Advice</a>
                         <a href="{{ route('donate') }}" class="nav-item nav-link text-white d-lg-none">Donate</a>
 
                         </div>

@@ -84,7 +84,7 @@
     <!-- About Start second-->
 
     <div class="container-fluid container-service">
-        <div class="container p-5">
+        <div class="container p-2">
 
 
             <div class="row g-5">
@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="text-center mx-auto wow fadeInUp mt-3" data-wow-delay="0.1s" style="max-width: 600px;">
-                <a href="{{ route('about') }}" class="btn btn-lg btn-primary">Read More<i
+                <a href="{{ route('about') }}" class="btn btn-sm btn-primary">Read More<i
                         class="bi bi-chevron-double-right ms-2"></i></a>
 
             </div>
@@ -120,10 +120,10 @@
 
 
     <!-- Service Start -->
-    <div class="container-fluid container-service py-5">
+    <div class="container-fluid container-service py-2">
         <div class="container py-5">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="display-5 mb-5 fw-medium">Our Services</h1>
+                <h1 class="display-6 mb-5 fw-medium fs-2">Our Services</h1>
 
             </div>
             <div class="row g-4">
@@ -180,69 +180,148 @@
 
             </div>
             <div class="text-center mx-auto wow fadeInUp mt-3" data-wow-delay="0.1s" style="max-width: 600px;">
-                <a href="{{ route('service') }}" class="btn btn-lg btn-primary">Read More<i
+                <a href="{{ route('service') }}" class="btn btn-sm btn-primary">Read More<i
                         class="bi bi-chevron-double-right ms-2"></i></a>
 
             </div>
         </div>
     </div>
     <!-- Service End -->
-
-    <div class="container-xxl py-5">
+    <!-- Quote Start and Medical Advice -->
+    <div class="container-xxl py-2">
         <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6 fw-small">Daily Bible Quotes</h1>
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="display-6 fs-3">Daily Bible Quotes & Medical Advices</h1>
             </div>
 
             <div class="row g-4 mb-5">
-                @forelse($quotes as $index => $quote)
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.1 + $index * 0.1 }}s">
-                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                <div class="col-md-6">
+                    <div class="row">
+                        @forelse($quotes as $index => $quote)
+                            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.1 + $index * 0.1 }}s">
+                                <div class="card h-100 shadow-sm border-0 overflow-hidden">
 
-                            <div class="card-body d-flex flex-column p-4">
-                                <h5 class="card-title text-primary mb-3">{{ $quote->title }}</h5>
+                                    <div class="card-body d-flex flex-column p-4">
+                                        <h5 class="card-title text-primary mb-3">{{ $quote->title }}</h5>
 
-                                <div class="mb-3">
-                                    <span class="badge bg-primary">{{ $quote->book }}
-                                        {{ $quote->chapter }}:{{ $quote->verse }}</span>
-                                </div>
+                                        <div class="mb-3">
+                                            <span class="badge bg-primary">{{ $quote->book }}
+                                                {{ $quote->chapter }}:{{ $quote->verse }}</span>
+                                        </div>
 
-                                <blockquote class="blockquote flex-grow-1 mb-4">
-                                    <p class="mb-0 fst-italic text-muted">"{{ Str::limit($quote->quote, 120) }}"</p>
-                                </blockquote>
+                                        <blockquote class=" flex-grow-1 mb-2">
+                                            <p class="mb-0 fst-italic text-muted">
+                                                "{{ Str::limit($quote->quote, 100, '...') }}"</p>
+                                        </blockquote>
 
-                                @if ($quote->explanation)
-                                    <div class="mb-3">
-                                        <button class="btn btn-outline-primary btn-sm" type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#explanation-{{ $quote->slug }}" aria-expanded="false">
-                                            <i class="fa fa-book-open me-1"></i> Read Explanation
-                                        </button>
+                                        @if ($quote->explanation)
+                                            <div class="mb-3">
+                                                <button class="btn btn-outline-primary btn-sm" type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#explanation-{{ $quote->slug }}"
+                                                    aria-expanded="false">
+                                                    <i class="fa fa-book-open me-1"></i> Read Explanation
+                                                </button>
 
-                                        <div class="collapse mt-2" id="explanation-{{ $quote->slug }}">
-                                            <div class="card card-body bg-light border-0 small">
-                                                {!! Str::limit(strip_tags($quote->explanation), 200) !!}
+                                                <div class="collapse mt-2" id="explanation-{{ $quote->slug }}">
+                                                    <div class="card card-body bg-light border-0 small">
+                                                        {!! Str::limit(strip_tags($quote->explanation), 200) !!}
+                                                        <a href="{{ route('bible-quote.single', $quote->slug) }}"
+                                                            class="text-primary mt-2">
+                                                            Read more...
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+
+                                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                                            <small class="text-muted">
+                                                <i class="fa fa-calendar me-1"></i>
+                                                {{ $quote->created_at->format('M d, Y') }}
+                                            </small>
+
+                                            <div class="btn-group">
                                                 <a href="{{ route('bible-quote.single', $quote->slug) }}"
-                                                    class="text-primary mt-2">
-                                                    Read more...
+                                                    class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-eye me-1"></i> View
                                                 </a>
+
+
                                             </div>
                                         </div>
                                     </div>
-                                @endif
+                                </div>
+                            </div>
+                        @empty
+                            <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="text-center py-5">
+                                    <div class="mb-4">
+                                        <i class="fa fa-book fa-4x text-muted"></i>
+                                    </div>
+                                    <h4 class="text-muted">No Bible Quotes Found</h4>
+                                    <p class="text-muted">
+
+                                    </p>
+
+                                </div>
+                            </div>
+                        @endforelse
+                        @if ($quotes->count() > 3)
+                            <a href="{{ route('bible_quote') }}" class="btn btn-primary rounded-pill py-2 px-4">
+                                View All Quotes
+                            </a>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-md-6">
+                     <div class="row g-4 mb-5">
+                @forelse($advices as $index => $advice)
+                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.1 + $index * 0.1 }}s">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                            <div class="card-body d-flex flex-column p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <h5 class="card-title text-primary mb-0 flex-grow-1" >
+                                        {{ $advice->title }}</h5>
+                                </div>
+
+                                <div class="flex-grow-1 mb-4">
+                                    <div class="text-muted">
+                                        {!! Str::limit($advice->content, 100, '...') !!}
+                                    </div>
+                                </div>
+                                @if ($advice->content)
+                                            <div class="mb-3">
+                                                <button class="btn btn-outline-primary btn-sm" type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#content-{{ $advice->slug }}"
+                                                    aria-expanded="false">
+                                                    <i class="fa fa-book-open me-1"></i> Read Explanation
+                                                </button>
+
+                                                <div class="collapse mt-2" id="content-{{ $advice->slug }}">
+                                                    <div class="card card-body bg-light border-0 small">
+                                                        {!! Str::limit(strip_tags($advice->content), 200) !!}
+                                                        <a href="{{ route('medical_advice.single', $advice->slug) }}"
+                                                            class="text-primary mt-2">
+                                                            Read more...
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
 
                                 <div class="d-flex justify-content-between align-items-center mt-auto">
                                     <small class="text-muted">
                                         <i class="fa fa-calendar me-1"></i>
-                                        {{ $quote->created_at->format('M d, Y') }}
+                                        {{ $advice->created_at->format('M d, Y') }}
                                     </small>
 
                                     <div class="btn-group">
-                                        <a href="{{ route('bible-quote.single', $quote->slug) }}"
-                                            class="btn btn-primary btn-sm">
+                                        <a href="{{ route('medical_advice.single', $advice->slug) }}" class="btn btn-sm btn-primary"
+                                            >
                                             <i class="fa fa-eye me-1"></i> View
                                         </a>
-
 
                                     </div>
                                 </div>
@@ -253,32 +332,28 @@
                     <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="text-center py-5">
                             <div class="mb-4">
-                                <i class="fa fa-book fa-4x text-muted"></i>
+                                <i class="fa fa-stethoscope fa-4x text-muted"></i>
                             </div>
-                            <h4 class="text-muted">No Bible Quotes Found</h4>
-                            <p class="text-muted">
-
-                            </p>
-
+                            <h4 class="text-muted">No Medical Advice Found</h4>
+                            <p class="text-muted">Please check back later for updates.</p>
                         </div>
                     </div>
                 @endforelse
-                @if ($quotes->count() > 3)
-    <a href="{{ route('bible_quote') }}" class="btn btn-primary rounded-pill py-2 px-4">
-        View All Quotes
-    </a>
-@endif
+            </div>
+                </div>
+
 
             </div>
 
         </div>
     </div>
+    <!-- Quote end and Medical Advice -->
 
     <!-- Event Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-2">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-5 fw-medium">Our Events</h1>
+                <h1 class="display-6 fw-medium fs-2">Our Events</h1>
             </div>
             <div class="row g-4">
                 <div class="col-md-12">
@@ -369,9 +444,9 @@
     <div class="container-xxl py-2">
         <div class="container">
 
-            <div class="text-center mx-auto wow fadeInUp py-4 my-4" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="text-center mx-auto wow fadeInUp py-2 my-2" data-wow-delay="0.1s" style="max-width: 500px;">
 
-                <h1 class="display-5 mb-5 fw-medium">Our Report</h1>
+                <h1 class="display-6 mb-2 fw-medium fs-2">Our Report</h1>
             </div>
             <div class="row g-4">
                 @if (session('success'))
@@ -393,7 +468,7 @@
                     <p>No Records</p>
                 @else
                     @foreach ($report as $value)
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="team-item rounded overflow-hidden pb-4">
                                 <div class="card-body p-3">
                                     <div class="card-title">
@@ -425,11 +500,11 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl pt-5">
+    <div class="container-xxl pt-2">
         <div class="container">
             <div class="text-center text-md-start pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 fs5 fw-medium">Testimonial</h1>
+                <h1 class="display-6 fw-medium fs-2">Testimonial</h1>
                 <p class="fs-6 fw-medium mb-5 text-capitalize">Testimonial from people we impacted their lives
                 </p>
             </div>

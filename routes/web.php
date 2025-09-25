@@ -87,6 +87,10 @@ Route::middleware('guest')->prefix('/')->group(function () {
     Route::get('memberships', FrontMemberships::class)->name('memberships');
     Route::get('bible-quote', \App\Livewire\Frontend\BibleQuote\Index::class)->name('bible_quote');
     Route::get('bible-quote/{quote}', \App\Livewire\Frontend\BibleQuote\View::class)->name('bible-quote.single');
+
+    Route::get('medical-advice', \App\Livewire\Frontend\MedicalAdvice\Index::class)->name('medical_advice');
+    Route::get('medical-advice/{advice}', \App\Livewire\Frontend\MedicalAdvice\View::class)->name('medical_advice.single');
+
 });
 
 Route::middleware('guest')->group(function () {
@@ -134,5 +138,9 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/bible-quote', \App\Livewire\Admin\BibleQuote\Index::class)->name('admin_bible_quote');
     Route::get('/bible-quote/create', \App\Livewire\Admin\BibleQuote\Create::class)->name('admin_bible_quote_create');
     Route::get('/bible-quote/edit/{quote}', \App\Livewire\Admin\BibleQuote\Edit::class)->name('admin_bible_quote_edit');
+
+    Route::get('/medical-advice', \App\Livewire\Admin\MedicalAdvice\Index::class)->name('admin_medical_advice');
+    Route::get('/medical-advice/create', \App\Livewire\Admin\MedicalAdvice\Create::class)->name('admin_medical_create');
+    Route::get('/medical-advice/edit/{advice}', \App\Livewire\Admin\MedicalAdvice\Edit::class)->name('admin_medical_edit');
 
 });

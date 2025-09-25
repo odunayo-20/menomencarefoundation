@@ -53,7 +53,7 @@
 
                     <!-- Sponsorship -->
                     <div class="mt-3">
-                        <h6 class="text-white mb-2">Sponsorship</h6>
+                        <h6 class="text-white mb-2">Partnership</h6>
 
                         <div class="d-flex align-items-center">
                             <a href="#" rel="noopener noreferrer"

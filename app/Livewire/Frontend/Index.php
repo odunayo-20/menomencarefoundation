@@ -5,6 +5,7 @@ namespace App\Livewire\Frontend;
 use App\Models\BibleQuote;
 use App\Models\Contact;
 use App\Models\Event;
+use App\Models\MedicalAdvice;
 use App\Models\Report;
 use App\Models\Team;
 use App\Models\Testimonial;
@@ -33,6 +34,7 @@ class Index extends Component
     public $message;
     public $past = [];
     public $quotes = [];
+    public $advices = [];
 
     public function render()
     {
@@ -50,7 +52,10 @@ class Index extends Component
         // $this->quotes = BibleQuote::
             $this->quotes = BibleQuote::where('is_active', true)
             ->orderBy('created_at', 'desc')
-            ->limit(3)->get();
+            ->limit(2)->get();
+            $this->advices = MedicalAdvice::where('status', true)
+            ->orderBy('created_at', 'desc')
+            ->limit(2)->get();
 
     }
 
